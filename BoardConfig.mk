@@ -34,7 +34,7 @@ BOARD_CACHE_DEVICE := /dev/block/mmcblk0p28
 BOARD_CACHE_FILESYSTEM := ext4
 BOARD_CACHE_FILESYSTEM_OPTIONS := nosuid,nodev,relatime,barrier=1,noauto_da_alloc
 
-BOARD_SDCARD_DEVICE_PRIMARY := /dev/block/mmcblk1p1
+BOARD_SDCARD_DEVICE_PRIMARY := /dev/block/mmcblk1p17
 BOARD_SDCARD_DEVICE_SECONDARY := /dev/block/mmcblk1
 
 TARGET_PREBUILT_KERNEL := device/lge/ls840/kernel
