@@ -26,4 +26,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/device_ls840.mk
+    $(LOCAL_DIR)/full_ls840.mk
