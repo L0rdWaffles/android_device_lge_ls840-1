@@ -1,36 +1,33 @@
-#
-# Copyright (C) 2012 The CyanogenMod Project
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#      http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-#
-
 ## Specify phone tech before including full_phone
-$(call inherit-product, vendor/cm/config/cdma.mk)
+$(call inherit-product, vendor/cm/config/gsm.mk)
 
 # Release name
-PRODUCT_RELEASE_NAME := d710
+PRODUCT_RELEASE_NAME := CM9-Viper-4G-$(shell date +%m%d%Y)
+
+UTC_DATE := $(shell date +%s)
+DATE := $(shell date +%Y%m%d)
 
 # Inherit some common CM stuff.
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
 # Inherit device configuration
-$(call inherit-product, device/samsung/d710/full_d710.mk)
+$(call inherit-product, device/lge/ms840/device_ls840.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full.mk)
 
 ## Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := d710
-PRODUCT_NAME := cm_d710
-PRODUCT_BRAND := Samsung
-PRODUCT_MODEL := SPH-D710 
+PRODUCT_DEVICE := ls840
+PRODUCT_NAME := cm_ls840
+PRODUCT_BRAND := lge
+PRODUCT_MODEL := LG-LS840
+PRODUCT_MANUFACTURER := LGE
 
-#Set build fingerprint
-PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=SPH-D710 BUILD_FINGERPRINT=samsung/SPH-D710/SPH-D710:4.0.3/IML74K/FC24:user/release-keys PRIVATE_BUILD_DESC="SPH-D710-user 4.0.3 IMM76D FC24 release-keys"
+#Set build fingerprint / ID / Product Name ect.
+PRODUCT_BUILD_PROP_OVERRIDES += \
+PRODUCT_DEVICE=cayman \
+PRODUCT_NAME=cayman_sprint_us \
+BUILD_ID=LG-LS840-CM9 \
+BUILD_DISPLAY_ID=LG-LS840-CM9 \
+BUILD_FINGERPRINT="sprint_lge/cayman_sprint_us/cayman:4.0.4/ZVI.IMM76D/LS840ZVI.4820d7b4:user/release-keys" \
+PRIVATE_BUILD_DESC="cayman_sprint_us-user 4.0.4 IMM76D LS840ZVI release-keys" \
+TARGET_BUILD_TYPE=eng \
+BUILD_NUMBER=${DATE} 

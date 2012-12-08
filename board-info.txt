@@ -1,3 +1,4 @@
-require board=smdk4210
-require version-bootloader=SPH-D710
+require board=ls840
+#require version-bootloader=PRIMEKJ10|PRIMEKK13
+#require version-baseband=I9250XXKK2
 
